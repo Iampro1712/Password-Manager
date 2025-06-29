@@ -1,0 +1,44 @@
+{
+  "name": "SecurePass - Generador de Contraseñas Seguras",
+  "short_name": "SecurePass",
+  "description": "Genera contraseñas ultra seguras con verificador de fortaleza y análisis de seguridad. 100% privado y gratuito.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#8b5cf6",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "categories": ["security", "utilities", "productivity"],
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "Generador de contraseñas principal"
+    }
+  ],
+  "features": [
+    "Generación criptográficamente segura",
+    "Verificador de fortaleza",
+    "Análisis de seguridad",
+    "Historial de contraseñas",
+    "100% privado"
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

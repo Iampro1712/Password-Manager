@@ -1,0 +1,18 @@
+# Netlify redirects file
+# https://docs.netlify.com/routing/redirects/
+
+# Redirect common password generator URLs to main page
+/password-generator /  301
+/generator /  301
+/passwords /  301
+/secure /  301
+
+# Redirect old paths (if any)
+/password-manager /  301
+/pass-gen /  301
+
+# Force HTTPS (handled by Netlify by default, but explicit is better)
+http://securepass.netlify.app/* https://securepass.netlify.app/:splat 301!
+
+# SPA fallback - serve index.html for any path that doesn't exist
+/* /index.html 200

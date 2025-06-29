@@ -91,6 +91,8 @@ La aplicación está optimizada para:
 
 ## 🔧 Instalación y Uso
 
+### Desarrollo Local
+
 1. **Clona el repositorio**:
    ```bash
    git clone [url-del-repositorio]
@@ -101,10 +103,10 @@ La aplicación está optimizada para:
    ```bash
    # Con Python
    python3 -m http.server 8000
-   
+
    # Con Node.js
    npx serve .
-   
+
    # Con PHP
    php -S localhost:8000
    ```
@@ -113,6 +115,74 @@ La aplicación está optimizada para:
    ```
    http://localhost:8000
    ```
+
+## 🚀 Deployment en Netlify
+
+### Opción 1: Drag & Drop (Más Fácil)
+
+1. **Prepara los archivos**:
+   - Asegúrate de tener todos los archivos del proyecto
+   - Verifica que `index.html` esté en la raíz
+
+2. **Sube a Netlify**:
+   - Ve a [netlify.com](https://netlify.com)
+   - Arrastra la carpeta del proyecto a la zona de "Deploy"
+   - ¡Listo! Tu sitio estará online en segundos
+
+### Opción 2: Git Integration (Recomendado)
+
+1. **Sube tu código a GitHub**:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin [tu-repo-url]
+   git push -u origin main
+   ```
+
+2. **Conecta con Netlify**:
+   - Ve a [netlify.com](https://netlify.com) y haz login
+   - Click en "New site from Git"
+   - Conecta tu repositorio de GitHub
+   - Configuración automática (ya incluida en `netlify.toml`)
+
+3. **Configuración automática**:
+   - **Build command**: (vacío - es un sitio estático)
+   - **Publish directory**: `.` (directorio raíz)
+   - **Deploy branch**: `main`
+
+### Configuración Incluida
+
+El proyecto ya incluye:
+
+- ✅ **`netlify.toml`** - Configuración de deployment
+- ✅ **`_redirects`** - Reglas de redirección
+- ✅ **Headers de seguridad** - CSP, HTTPS, etc.
+- ✅ **Optimizaciones de cache** - Para mejor rendimiento
+- ✅ **Meta tags SEO** - Open Graph, Twitter Cards
+- ✅ **PWA Manifest** - Para instalación como app
+- ✅ **Structured Data** - Para mejor indexación
+
+### Variables de Entorno (Opcional)
+
+Si necesitas configurar variables:
+
+```bash
+# En Netlify Dashboard > Site Settings > Environment Variables
+SITE_URL=https://tu-sitio.netlify.app
+```
+
+### Dominio Personalizado
+
+1. **En Netlify Dashboard**:
+   - Ve a "Domain settings"
+   - Click "Add custom domain"
+   - Sigue las instrucciones para configurar DNS
+
+2. **SSL Automático**:
+   - Netlify configura HTTPS automáticamente
+   - Certificado Let's Encrypt incluido
 
 ## 📋 Consejos de Seguridad Incluidos
 
@@ -135,14 +205,42 @@ La aplicación está optimizada para:
 - **Web Crypto API** requerida
 - **JavaScript habilitado** necesario
 
+## 🔧 Troubleshooting
+
+### Problemas Comunes
+
+**El sitio no carga correctamente:**
+- Verifica que todos los archivos estén en la raíz del proyecto
+- Asegúrate de que `index.html` sea el archivo principal
+- Revisa la consola del navegador para errores
+
+**Las animaciones van lentas:**
+- El sitio respeta `prefers-reduced-motion` automáticamente
+- En dispositivos lentos, las animaciones se optimizan automáticamente
+
+**Problemas con HTTPS:**
+- Netlify configura HTTPS automáticamente
+- Si usas dominio personalizado, espera unos minutos para la propagación
+
+### Optimizaciones de Rendimiento
+
+El proyecto incluye:
+- **Lazy loading** de recursos no críticos
+- **GPU acceleration** para animaciones
+- **Compresión automática** en Netlify
+- **Cache headers** optimizados
+- **Minificación** automática de CSS/JS
+
 ## 🎯 Próximas Características
 
 - [ ] Exportar contraseñas a archivo
 - [ ] Temas personalizables
 - [ ] Generador de frases de contraseña
 - [ ] Integración con gestores de contraseñas
-- [ ] Modo offline completo
+- [ ] Modo offline completo (Service Worker)
 - [ ] Análisis de contraseñas filtradas
+- [ ] Soporte para múltiples idiomas
+- [ ] API para desarrolladores
 
 ## 📄 Licencia
 
